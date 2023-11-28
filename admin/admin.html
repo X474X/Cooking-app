@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page Cooking App</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <h1>ADMIN PAGE</h1>
+    <div class="admin-wrapper">
+      <div class="create">
+        <p>Create</p>
+        <input type="text" placeholder="Title" />
+        <textarea placeholder="Reteta"></textarea>
+        <input type="number" placeholder="Time" />
+        <input type="file" placeholder="Image" />
+        <button class="create-button">Create</button>
+      </div>
+      <div class="update">
+        <p>Update</p>
+        <select
+          class="select-update"
+          name="languages"
+          id="lang"
+          onfocus="this.size=4;"
+          onblur="this.size=1;"
+          onchange="this.size=1; this.blur();"
+        ></select>
+        <input type="text" placeholder="Title" />
+        <textarea placeholder="Reteta"></textarea>
+        <input type="number" placeholder="Time" />
+        <input type="file" placeholder="Image" />
+        <button class="update-button">Update</button>
+      </div>
+      <div class="delete">
+        <p>Delete</p>
+        <select
+          class="select-delete"
+          name="languages"
+          id="lang"
+          onfocus="this.size=4;"
+          onblur="this.size=1;"
+          onchange="this.size=1; this.blur();"
+        ></select>
+        <button class="delete-button">Delete</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,38 +1,37 @@
-// const x = [
-//   {
-//     image: "img",
-//     title: "Product1",
-//     rating: 5,
-//     price: 200,
-//   },
-//   {
-//     image: "img",
-//     title: "Product2",
-//     rating: 5,
-//     price: 200,
-//   },
-//   {
-//     image: "img",
-//     title: "Product3",
-//     rating: 5,
-//     price: 200,
-//   },
-//   {
-//     image: "img",
-//     title: "Product4",
-//     rating: 5,
-//     price: 200,
-//   },
-// ];
+const select = document.querySelector("select");
+const col1 = document.querySelector(".col1");
+const col2 = document.querySelector(".col2");
 
-// Sa se afiseze numele personelor care au varsta mai mare de 20 de ani,
-// in caz contrat numele lor o sa fie modificat cu Piticilor
+fetch("http://localhost:8000/products")
+  .then((res) => res.json())
+  .then((json) => renderProducts(json));
 
-// for (let i = 0; i < x.length; i++) {
-//   if (x[i].varsta > 20) {
-//     console.log(x[i].nume);
-//   } else {
-//     x[i].nume = "Pitic";
-//     console.log(x[i].nume);
-//   }
-// }
+const renderProducts = (retete) => {
+  for (let index = 0; index < retete.length; index++) {
+    const option = document.createElement("option");
+    option.setAttribute("value", index);
+    option.innerHTML = retete[index].title;
+    option.addEventListener("click", () => {
+      col1.innerHTML = " ";
+      col2.innerHTML = " ";
+      const reteta = retete[option.getAttribute("value")];
+      console.log(reteta);
+      const image = document.createElement("img");
+      image.src = reteta.image;
+      col1.appendChild(image);
+      const titluReteta = document.createElement("h3");
+      titluReteta.innerHTML = reteta.title;
+      col2.appendChild(titluReteta);
+      const infoReteta = document.createElement("p");
+      infoReteta.innerHTML = reteta.reteta;
+      col2.appendChild(infoReteta);
+      const timp = document.createElement("span");
+      timp.innerHTML = "Timp: " + reteta.timp;
+      col2.appendChild(timp);
+    });
+
+    select.appendChild(option);
+  }
+};
+
+//https://www.freecodecamp.org/news/json-server-for-frontend-development/

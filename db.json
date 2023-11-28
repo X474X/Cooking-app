@@ -1,0 +1,23 @@
+{
+  "products": [{
+    "id":1,
+    "image": "./Images/Carbonara.jpeg",
+    "title": "Snitel de pui",
+    "reteta": " COSTITE PUI ",
+    "timp": "1 ora"
+  },
+  {
+    "id":2,
+    "image": "./Images/Carbonara.jpeg",
+    "title": "Ciorba de burta",
+    "reteta": "BURTA ",
+    "timp": "2 ore"
+  },
+  {
+    "id":3,
+    "image": "./Images/Carbonara.jpeg",
+    "title": "Spaghete carbonara",
+    "reteta": "SPAGHETE",
+    "timp": "30 min"
+  }]
+}
