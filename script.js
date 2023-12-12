@@ -34,4 +34,11 @@ const renderProducts = (retete) => {
   }
 };
 
+const reteta = {
+  Title: "a ",
+  Time: " a",
+  Image: "a ",
+  Receipe: " a",
+};
+
 //https://www.freecodecamp.org/news/json-server-for-frontend-development/

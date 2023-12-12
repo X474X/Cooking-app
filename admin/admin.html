@@ -5,16 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Page Cooking App</title>
     <link rel="stylesheet" href="admin.css" />
+    <script src="./admin.js" defer></script>
   </head>
   <body>
     <h1>ADMIN PAGE</h1>
     <div class="admin-wrapper">
       <div class="create">
         <p>Create</p>
-        <input type="text" placeholder="Title" />
-        <textarea placeholder="Reteta"></textarea>
-        <input type="number" placeholder="Time" />
-        <input type="file" placeholder="Image" />
+        <input
+          type="text"
+          placeholder="Title"
+          class="create-input"
+          name="title"
+        />
+        <textarea
+          placeholder="Reteta"
+          class="create-input"
+          name="reteta"
+        ></textarea>
+        <input
+          type="number"
+          placeholder="Time"
+          class="create-input"
+          name="timp"
+        />
+        <input type="file" placeholder="Image" class="create-img" />
         <button class="create-button">Create</button>
       </div>
       <div class="update">
@@ -27,10 +42,11 @@
           onblur="this.size=1;"
           onchange="this.size=1; this.blur();"
         ></select>
-        <input type="text" placeholder="Title" />
-        <textarea placeholder="Reteta"></textarea>
-        <input type="number" placeholder="Time" />
-        <input type="file" placeholder="Image" />
+        <input type="text" placeholder="Title" class="update-input" />
+        <textarea placeholder="Reteta" class="update-input"></textarea>
+        <input type="number" placeholder="Time" class="update-input" />
+        <input type="file" placeholder="Image" class="update-img" />
+        <img src="" alt="" class="image-to-update" />
         <button class="update-button">Update</button>
       </div>
       <div class="delete">

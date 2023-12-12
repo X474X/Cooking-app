@@ -62,9 +62,10 @@ textarea {
 }
 
 select {
-  height: 35px;
   border-radius: 10px;
   border: 1px solid black;
+  font-size: 24px;
+  padding: 5px 20px;
 }
 
 button {
@@ -87,4 +88,10 @@ button {
 
 .delete-button {
   background-color: lightcoral;
+}
+.image-to-update {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: none;
 }
