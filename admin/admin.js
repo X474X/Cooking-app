@@ -11,12 +11,14 @@ const imageToUpdate = document.querySelector(".image-to-update");
 
 let createForm = {
   title: "",
+  autor: "",
   reteta: "",
   timp: 0,
   image: "",
 };
 let updateForm = {
   title: "",
+  autor: "",
   reteta: "",
   timp: 0,
   image: "",
@@ -46,8 +48,9 @@ const createOptions = (data) => {
       for (let j = 0; j < data.length; j++) {
         if (data[j].id === data[i].id) {
           updateInputs[0].value = data[j].title;
-          updateInputs[1].value = data[j].reteta;
-          updateInputs[2].value = data[j].timp;
+          updateInputs[1].value = data[j].autor;
+          updateInputs[2].value = data[j].reteta;
+          updateInputs[3].value = data[j].timp;
           imageToUpdate.style.display = "flex";
           imageToUpdate.src = data[j].image;
           updateId = data[j].id;
@@ -62,6 +65,9 @@ createButton.addEventListener("click", () => {
   for (let i = 0; i < createInputs.length; i++) {
     if (createInputs[i].name === "title") {
       createForm.title = createInputs[i].value;
+    }
+    if (createInputs[i].name === "autor") {
+      createForm.autor = createInputs[i].value;
     }
     if (createInputs[i].name === "reteta") {
       createForm.reteta = createInputs[i].value;
@@ -83,8 +89,9 @@ createButton.addEventListener("click", () => {
 
 updateButton.addEventListener("click", () => {
   updateForm.title = updateInputs[0].value;
-  updateForm.reteta = updateInputs[1].value;
-  updateForm.timp = updateInputs[2].value;
+  updateForm.autor = updateInputs[1].value;
+  updateForm.reteta = updateInputs[2].value;
+  updateForm.timp = updateInputs[3].value;
   updateForm.image = base64Update;
   //UPDATE request
   fetch(`http://localhost:8000/products/${updateId}`, {
@@ -105,7 +112,7 @@ createImg.addEventListener("change", () => {
     reader.onload = function (e) {
       base64Create = e.target.result;
     };
-
+    console.log(base64Create);
     reader.readAsDataURL(file);
   }
 });
@@ -136,3 +143,5 @@ deleteButton.addEventListener("click", () => {
     method: "DELETE",
   });
 });
+
+//Sa creem in admin la CREATE un input nou numit autor.

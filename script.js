@@ -22,6 +22,9 @@ const renderProducts = (retete) => {
       const titluReteta = document.createElement("h3");
       titluReteta.innerHTML = reteta.title;
       col2.appendChild(titluReteta);
+      const autorReteta = document.createElement("span");
+      autorReteta.innerHTML = reteta.autor;
+      col2.appendChild(autorReteta);
       const infoReteta = document.createElement("p");
       infoReteta.innerHTML = reteta.reteta;
       col2.appendChild(infoReteta);
